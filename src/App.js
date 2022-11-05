@@ -11,7 +11,6 @@ import { loader } from './loaders/Loader';
 import About from './components/About/About';
 import SingUp from './components/SingUp/SingUp';
 import Shipping from './components/Shipping/Shipping';
-import Privetaraoute from './components/routes/Privetaraoute';
 import PrivetRoute from './components/routes/Privetaraoute';
 function App() {
   const router = createBrowserRouter([
@@ -21,7 +20,6 @@ function App() {
       children:[
         {
           path:'/',
-          loader: () =>fetch('products.json'),
           element: <Shop></Shop>
         },
         {
@@ -35,7 +33,7 @@ function App() {
         },
         {
           path: 'manage',
-          element: <Manage></Manage>
+          element: <PrivetRoute><Manage></Manage></PrivetRoute>
         },
         {
           path:'shipping',
